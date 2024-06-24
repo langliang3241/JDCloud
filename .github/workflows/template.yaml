@@ -13,7 +13,7 @@
 #-------------------------------------------------------------------------------------------------------
 
 # Workflow name which is showed in GitHub Actions.
-name: Build Example-Firmware for Example-Device
+name: JdCloud编译
 
 on:
   workflow_dispatch:
@@ -34,9 +34,9 @@ env:
   # REPO means the OpenWrt repo you want to build from in this workflow. 
   # You can modify the REPO_NAME to any name you want, but remember not to let it have the same name in 
   # other workflows.
-  REPO_NAME: example-name
-  REPO_URL: https://github.com/example/example.git
-  REPO_BRANCH: example-branch
+  REPO_NAME: JDCloud
+  REPO_URL: https://github.com/langliang3241/lede.git
+  REPO_BRANCH: master
   BUILD_DEPENDS:  "ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential \
                    bzip2 ccache cmake cpio curl device-tree-compiler fastjar flex gawk gettext gcc-multilib g++-multilib \
                    git gperf haveged help2man intltool libc6-dev-i386 libelf-dev libfuse-dev libglib2.0-dev libgmp3-dev \
@@ -46,7 +46,7 @@ env:
                    uglifyjs upx-ucl unzip vim wget xmlto xxd zlib1g-dev clang file nano aria2"
   # CONFIG_FILE is the name of your own config files for compiling, you should upload these files into the root 
   # directory of your workflow repo.
-  CONFIG_FILE: example.config
+  CONFIG_FILE: jdcloud.config
   # CUSTOM_SCRIPT_1 is the name of extra bash script you want to execute before feeds update&install.
   # CUSTOM_SCRIPT_2 is the name of extra bash script you want to execute after feeds update&install.
   # You can modify the initial settings of your firmware through these two scripts. If this is what you need,
@@ -61,7 +61,7 @@ env:
   # The following are options of where the firmware needs to be transfered. 
   COWTRANSFER_FIRMWARE: false
   WETRANSFER_FIRMWARE: false
-  RELEASE_FIRMWARE: false
+  RELEASE_FIRMWARE: true
   # Change the following to your time zone.
   TIME_ZONE: Asia/Shanghai
 
