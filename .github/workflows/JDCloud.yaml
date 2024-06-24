@@ -13,7 +13,7 @@
 #-------------------------------------------------------------------------------------------------------
 
 # Workflow name which is showed in GitHub Actions.
-name: JdCloud编译
+name: JDCloud编译
 
 on:
   workflow_dispatch:
